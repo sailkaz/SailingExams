@@ -1,0 +1,27 @@
+<header class="p-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <div class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <a routerLink="home" class="nav-link px-2 text-white">Home</a>
+
+      </div>
+      <div style="position: absolute; margin-left: 450px; margin-right: auto;">
+        <p> Centrum Egzaminacyjne Sportów Wodnych PuntoVita</p>
+      </div>
+
+      <div class="text-end">
+        <a routerLink="/login" class="btn btn-outline-light me-2">Logowanie</a>
+        <a routerLink="/register" class="btn btn-outline-light me-2">Rejestracja</a>
+        <a (click)="logout()" class="btn btn-outline-light me-2">Wyloguj</a>
+      </div>
+    </div>
+  </div>
+</header>
+<body>
+  <div>
+    <img src="/assets/sunset-1.jpg">
+  </div>
+</body>
+<router-outlet></router-outlet>
+
+

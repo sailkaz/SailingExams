@@ -1,0 +1,37 @@
+<div class="card-container-up">
+  <div class="card-example">
+    <img class="header-img" src="/assets/user.png">
+    <div>
+      <button class="my-btn" (click)="GetStudentWithAddressAndExams()">Zdający i jego egzaminy</button>
+    </div>
+  </div>
+  <div class="card-example">
+    <img class="header-img" src="/assets/manager.png">
+    <div>
+       <button class="my-btn" (click)="GetExamWithStudents()">Egzamin z listą zdających</button>
+    </div>
+  </div>
+  <div class="card-example">
+    <img class="header-img" src="/assets/admin.png">
+    <div>
+      <button class="my-btn" (click)="GetStudentsWhoPassedTheExam()">Lista zdających wg wyniku</button>
+    </div>
+  </div>
+</div>
+<div class="card-container-down">
+  <div class="card-example">
+    <img class="header-img" src="/assets/user.png">
+    <div>
+      <button class="my-btn" (click)="UpdateExamResult()">Wprowadź wynik egzaminu</button>
+    </div>
+  </div>
+  <div class="card-example">
+    <img class="header-img" src="/assets/user.png">
+    <div>
+      <button class="my-btn" (click)="DeleteStudent()">Usuń dane zdającego</button>
+    </div>
+  </div>
+</div>
+<div class='card-footer'>
+  <button class="back-btn" (click)='onBack()'>Back</button>
+</div>

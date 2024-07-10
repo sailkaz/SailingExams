@@ -1,0 +1,43 @@
+<main class="form-signin">
+  <h3 class="h3 mb-3 fw-normal" justify-content: center>Podaj Nazwisko Przewodniczącego Komisji</h3>
+  <div>
+    <input [(ngModel)]="lastName" class="form-control" type="text" placeholder="Nazwisko">
+  </div>
+  <button id="my-btn" (click)="getCommitteeHeadWithExams(lastName)">Wyślij</button>
+</main>
+<div class="card-footer">
+  <button class="back-btn" (click)='onBack()'>Back</button>
+</div>
+<div class="table-container">
+  <div class="table-responsive" class="exams-table">
+    <table class="table" *ngIf="exams">
+      <thead>
+        <tr>
+          <th>lp</th>
+          <th>Numer Egzaminu</th>
+          <th>Data</th>
+          <th>Miejsce</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let exam of exams | paginate
+        : {
+            itemsPerPage: tableSize,
+            currentPage: page,
+            totalItems: count
+          };
+          let i = index">
+          <td scope="row"></td>
+          <td>{{exam.sailingExamNumber}} </td>
+          <td>{{exam.sailingExamDate| customDatepipe }}</td>
+          <td>{{exam.sailingExamPlace}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+      <pagination-controls *ngIf="exams" previousLabel="Prev" nextLabel="Next"
+        (pageChange)="onTableDataChange($event)">
+      </pagination-controls>
+    </div>
+  </div>
+</div>

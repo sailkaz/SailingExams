@@ -1,0 +1,21 @@
+<main>
+  <form [formGroup]="form" (submit)="submit()">
+    <div >
+      <input formControlName="name" type="name" autocomplete="name" class="form-control"
+        placeholder="user name">
+    </div>
+    <div >
+      <input formControlName="email" type="email" autocomplete="email" class="form-control"
+        placeholder="name@example.com">
+    </div>
+    <div >
+      <input formControlName="password" type="password" autocomplete="new-password" class="form-control"
+        placeholder="Password">
+    </div>
+    <div >
+      <input formControlName="confirmPassword" type="confirmPassword" autocomplete="new-password" class="form-control"
+        placeholder="Confirm Password">
+    </div>
+    <button class="my-btn" type="submit">Wyślij</button>
+  </form>
+</main>

@@ -1,0 +1,75 @@
+<main class="form-signin">
+  <h3 class="h3 mb-3 fw-normal" justify-content: center>Podaj Numer Egzaminu</h3>
+  <div>
+    <input [(ngModel)]="sailingExamNumber" class="form-control" placeholder="PV-0-RR">
+  </div>
+  <button id="my-btn" (click)="getExamWithStudents(sailingExamNumber)">Wyślij</button>
+</main>
+<div class="card-footer">
+  <button class="back-btn" (click)='onBack()'>Back</button>
+</div>
+<div class="table-container">
+  <div class="table-responsive" class="exam-table">
+    <table class="table" class="table table-bordered" *ngIf="exam.sailingExamPlace">
+      <thead>
+        <tr>
+          <th>lp</th>
+          <th>Numer egzaminu</th>
+          <th>Data</th>
+          <th>Miejsce</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row"></td>
+          <td>{{ exam.sailingExamNumber }}</td>
+          <td>{{ exam.sailingExamDate| customDatepipe}}</td>
+          <td>{{ exam.sailingExamPlace }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-responsive" class="students-table">
+    <table class="table" class="table table-bordered" *ngIf="exam.sailingExamPlace">
+      <thead>
+        <tr>
+          <th>lp</th>
+          <th>Imię</th>
+          <th>
+            <div class="table-data-flex">
+              <div>
+                Nazwisko
+              </div>
+              <div class="table-data-flex-option">
+                <mat-icon (click)="sortUsersData('asc')">expand_more</mat-icon>
+                <mat-icon (click)="sortUsersData('desc')">expand_less</mat-icon>
+              </div>
+            </div>
+          </th>
+          <th>Pesel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of exam.students | paginate
+        : {
+            itemsPerPage: tableSize,
+            currentPage: page,
+            totalItems: count
+          };
+          let i = index">
+          <td scope="row"></td>
+          <td>{{student.firstName}}</td>
+          <td>
+            {{student.lastName}}
+          </td>
+          <td>{{student.pesel}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+      <pagination-controls *ngIf="exam.sailingExamPlace" previousLabel="Prev" nextLabel="Next"
+        (pageChange)="onTableDataChange($event)">
+      </pagination-controls>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+<main class="form-signin">
+
+  <h3 class="h3 mb-3 fw-normal" justify-content: center>Pobierz wszystkie komisje</h3>
+  <button id="my-btn" (click)="getExaminationCommittees()">Wyślij</button>
+</main>
+<div class="card-footer">
+  <button class="back-btn" style="width:80px" (click)='onBack()'>Back</button>
+</div>
+<div class="committee-container">
+  <div class="head-table" >
+    <table class="table" *ngIf="examinationCommittees">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>Przewodniczący Komisji</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>lp</th>
+          <th>Id Komisji</th>
+          <th>Imię</th>
+          <th>Nazwisko</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let examinationCommittee of examinationCommittees">
+          <td *ngIf="examinationCommittee.examinationCommitteeHead.examinationCommitteeHeadFirstName" scope="row"></td>
+          <td> {{examinationCommittee.examinationCommitteeId}}</td>
+          <td> {{ examinationCommittee.examinationCommitteeHead.examinationCommitteeHeadFirstName }}</td>
+          <td> {{ examinationCommittee.examinationCommitteeHead.examinationCommitteeHeadLastName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="secretary-table" >
+    <table class="table" *ngIf="examinationCommittees">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>Sekretarz Komisji</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>lp</th>
+          <th>Id Komisji</th>
+          <th>Imię</th>
+          <th>Nazwisko</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let examinationCommittee of examinationCommittees" >
+          <td *ngIf="examinationCommittee.examinationCommitteeSecretary.examinationCommitteeSecretaryFirstName" scope="row"></td>
+          <td *ngIf="examinationCommittee.examinationCommitteeSecretary.examinationCommitteeSecretaryFirstName"> {{ examinationCommittee.examinationCommitteeId }}</td>
+          <td *ngIf="examinationCommittee.examinationCommitteeSecretary.examinationCommitteeSecretaryFirstName"> {{ examinationCommittee.examinationCommitteeSecretary.examinationCommitteeSecretaryFirstName }}</td>
+          <td *ngIf="examinationCommittee.examinationCommitteeSecretary.examinationCommitteeSecretaryFirstName"> {{ examinationCommittee.examinationCommitteeSecretary.examinationCommitteeSecretaryLastName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="member-table" *ngIf="examinationCommittees">
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>Członek Komisji</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>lp</th>
+          <th>Id Komisji</th>
+          <th>Imię</th>
+          <th>Nazwisko</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let examinationCommittee of examinationCommittees">
+        <tr *ngFor="let member of examinationCommittee.examinationCommitteeMembers">
+          <td *ngIf="member?.examinationCommitteeMemberFirstName" scope="row"></td>
+          <td> {{examinationCommittee?.examinationCommitteeId}} </td>
+          <td> {{ member?.examinationCommitteeMemberFirstName }}</td>
+          <td> {{ member?.examinationCommitteeMemberLastName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<main class="form-signin">
+  <h3 class="h3 mb-3 fw-normal" justify-content: center>Podaj Nazwisko Członka Komisji</h3>
+  <div>
+    <input [(ngModel)]="lastName" class="form-control" type="text" placeholder="Nazwisko">
+  </div>
+  <button id="my-btn" (click)="GetExaminationCommitteeMember(lastName)">Wyślij</button>
+</main>
+<div class="card-footer">
+  <button class='back-btn' style="width:80px" (click)='onBack()'>Back</button>
+</div>
+<div class="table-container">
+  <div class="table-responsive" class="member-table">
+    <table class="table" *ngIf="examinationCommitteeMember.examinationCommitteeMemberFirstName">
+      <thead>
+        <tr>
+          <th>lp</th>
+          <th>Imię</th>
+          <th>Nazwisko</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row"></td>
+          <td>{{ examinationCommitteeMember.examinationCommitteeMemberFirstName }}</td>
+          <td>{{ examinationCommitteeMember.examinationCommitteeMemberLastName }}</td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>

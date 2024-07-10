@@ -1,0 +1,17 @@
+<main class="form-signin">
+  <h3 class="h3 mb-3 fw-normal">Podaj Pesel</h3>
+  <div>
+    <input [(ngModel)]="pesel" class="form-control" placeholder="Pesel">
+  </div>
+  <h3 class="h3 mb-3 fw-normal">Podaj Wynik Egzaminu</h3>
+  <div>
+    <input [(ngModel)]="examResult.value" class="form-control" placeholder="Pozytywny/Negatywny">
+  </div>
+  <button id="my-btn" (click)="updateExamResult(pesel, examResult)">Wyślij</button>
+  <div class="info" *ngIf="responseInfo">
+    <p >{{responseInfo}}</p>
+  </div>
+</main>
+<div class="card-footer">
+  <button class="back-btn" (click)='onBack()'>Back</button>
+</div>

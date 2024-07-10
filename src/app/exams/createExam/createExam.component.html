@@ -1,0 +1,18 @@
+<main class="form-signin">
+  <h1 class="h3 mb-3 fw-normal">Podaj Dane Egzaminu</h1>
+  <div>
+    <input [(ngModel)]="exam.sailingExamNumber" type="text" class="form-control" placeholder="PV-0-RR">
+  </div>
+  <div>
+    <input [(ngModel)]=" exam.sailingExamDate" type="date" class="form-control" placeholder="DD-MM-RRRR">
+  </div>
+  <div>
+    <input [(ngModel)]="exam.sailingExamPlace" type="text" class="form-control" placeholder="Miejscowość">
+  </div>
+  <div>
+    <button id="my-btn" (click)="createExam(exam)">Wyślij</button>
+  </div>
+</main>
+<div class="card-footer">
+  <button class="back-btn" (click)='onBack()'>Back</button>
+</div>

@@ -1,0 +1,120 @@
+<main class="form-signin">
+  <h3 class="h3 mb-3 fw-normal" justify-content: center>Podaj Id Komisji</h3>
+  <div>
+    <input [(ngModel)]="examinationCommitteeId" type="number" class="form-control" placeholder="Id">
+  </div>
+  <button id="my-btn" (click)="getExaminationCommittee(examinationCommitteeId)">Wyślij</button>
+</main>
+<div class="card-footer">
+  <button class="back-btn" (click)='onBack()'>Back</button>
+</div>
+<div class="committee-container">
+  <div class="head-table" >
+    <table class="table" *ngIf="examinationCommittee.examinationCommitteeHead.examinationCommitteeHeadFirstName">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Przewodniczący Komisji</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>lp</th>
+          <th>Imię</th>
+          <th>Nazwisko</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row"></td>
+          <td>{{ examinationCommittee.examinationCommitteeHead.examinationCommitteeHeadFirstName }}</td>
+          <td>{{ examinationCommittee.examinationCommitteeHead.examinationCommitteeHeadLastName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="secretary-table" >
+    <table class="table" *ngIf="examinationCommittee.examinationCommitteeHead.examinationCommitteeHeadFirstName">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Sekretarz Komisji</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>lp</th>
+          <th>Imię</th>
+          <th>Nazwisko</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row"></td>
+          <td>{{ examinationCommittee.examinationCommitteeSecretary.examinationCommitteeSecretaryFirstName }}</td>
+          <td>{{ examinationCommittee.examinationCommitteeSecretary.examinationCommitteeSecretaryLastName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="member-table">
+    <table class="table" *ngIf="examinationCommittee.examinationCommitteeMembers">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Członek Komisji</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>lp</th>
+          <th>Imię</th>
+          <th>Nazwisko</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let examinationCommitteeMember of examinationCommittee.examinationCommitteeMembers">
+          <td scope="row"></td>
+          <td>{{ examinationCommitteeMember.examinationCommitteeMemberFirstName }}</td>
+          <td>{{ examinationCommitteeMember.examinationCommitteeMemberLastName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="exams-container">
+  <div class="exams-table" >
+    <table class="table" *ngIf="examinationCommittee.sailingExams">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Egzaminy Komisji</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>lp</th>
+          <th>Numer Egzaminu</th>
+          <th>Data</th>
+          <th>Miejsce</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let exam of examinationCommittee.sailingExams | paginate : {
+          itemsPerPage: tableSize,
+          currentPage: page,
+          totalItems: count
+        };
+        let i = index">
+          <td scope="row"></td>
+          <td>{{ exam.sailingExamNumber }}</td>
+          <td>{{ exam.sailingExamDate | customDatepipe}}</td>
+          <td>{{exam.sailingExamPlace}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+      <pagination-controls *ngIf="examinationCommittee.sailingExams" previousLabel="Prev" nextLabel="Next"
+        (pageChange)="onTableDataChange($event)">
+      </pagination-controls>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<main class="form-signin">
+  <h3 class="h3 mb-3 fw-normal" justify-content: center>Podaj Pesel</h3>
+  <div>
+    <input [(ngModel)]="pesel" class="form-control" placeholder="Pesel">
+  </div>
+  <button id="my-btn" (click)="getStudentWithExams(pesel)">Wyślij</button>
+</main>
+<div class="card-footer">
+  <button class="back-btn" (click)='onBack()'>Back</button>
+</div>
+<div class="table-container">
+  <div class="table-responsive" class="student-table">
+    <table class="table" class="table table-bordered" *ngIf="student">
+      <thead>
+        <tr>
+          <th>lp</th>
+          <th>Imię</th>
+          <th>Nazwisko</th>
+          <th>Pesel</th>
+          <th>Wynik</th>
+          <th>Ulica</th>
+          <th>Numer</th>
+          <th *ngIf="student.address.flatNumber != 0">Numer Mieszkania</th>
+          <th>Kod Pocztowy</th>
+          <th>Miasto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row"></td>          <td>{{ student.firstName }}</td>
+          <td>{{ student.lastName }}</td>
+          <td>{{ student.pesel }}</td>
+          <td>{{ student.result }}</td>
+          <td>{{ student.address.street }}</td>
+          <td>{{ student.address.streetNumber }}</td>
+          <td *ngIf="student.address.flatNumber!=0">{{ student.address.flatNumber }}</td>
+          <td>{{ student.address.postalCode }}</td>
+          <td>{{ student.address.city }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-responsive" class="exams-table">
+    <table class="table" class="table table-bordered" *ngIf="student">
+      <thead>
+        <tr>
+          <th>lp</th>
+          <th>Numer egzaminu</th>
+          <th>Data</th>
+          <th>Miejsce</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let exam of student.sailingExams">
+          <td scope="row"></td>
+          <td>{{ exam.sailingExamNumber }}</td>
+          <td>{{ exam.sailingExamDate| customDatepipe}}</td>
+          <td>{{ exam.sailingExamPlace }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

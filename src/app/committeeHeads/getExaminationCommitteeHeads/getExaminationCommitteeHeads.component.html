@@ -1,0 +1,32 @@
+<main class="form-signin">
+  <h3 class="h3 mb-3 fw-normal" justify-content: center>Pobierz wszystkich przewodniczących komisji</h3>
+  <button id="my-btn" (click)="getExaminationCommitteeHeads()">Wyślij</button>
+</main>
+<div class="card-footer">
+  <button class="back-btn" (click)='onBack()'>Back</button>
+</div>
+<div class="table-container">
+  <div class="table-responsive" class="heads-table">
+  <table class="table" class="table table-bordered" *ngIf="examinationCommitteeHeads">
+    <thead>
+      <tr>
+        <th>lp</th>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let examinationCommitteeHead of examinationCommitteeHeads">
+        <td scope="row"></td>
+        <td>{{ examinationCommitteeHead.examinationCommitteeHeadFirstName }}</td>
+        <td>{{ examinationCommitteeHead.examinationCommitteeHeadLastName }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+
+
+
+

@@ -1,0 +1,90 @@
+<div class="card-container">
+  <div class="card-example">
+    <button class="my-btn" (click)="CreateExam()">Dodaj Egzamin</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="ConnectExamWithCommittee()">Przypisz Egzamin do Komisji</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="DeleteExam()">Usuń Egzamin</button>
+  </div>
+</div>
+<div class="card-container">
+  <div class="card-example">
+    <button class="my-btn" (click)="CreateExaminationCommittee()">Dodaj Komisję</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="GetExaminationCommittees()">Pobierz Wszystkie Komisje</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="GetExaminationCommittee()">Pobierz Komisję</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="DeleteExaminationCommittee()">Usuń Komisję</button>
+  </div>
+</div>
+<div class="card-container">
+  <div class="card-example">
+    <button class="my-btn" (click)="CreateExaminationCoommitteeHead()">Dodaj Przewodniczącego</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="GetExaminationCommitteeHead()">Pobierz Przewodniczącego</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="GetExaminationCommitteeHeads()">Pobierz Wszystkich Przewodniczących</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="ConnectCommitteeHeadAndCommittee()">Wyznacz Przewodniczącego Komisji</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="GetCommitteeHeadWithExams()">Pobierz Komisje Przewodniczącego</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="DeleteExaminationCommitteeHead()">Usuń Przewodniczącego</button>
+  </div>
+</div>
+<div></div>
+<div class="card-container">
+  <div class="card-example">
+    <button class="my-btn" (click)="CreateExaminationCoommitteeSecretary()">Dodaj Sekretarza Komisji</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="GetExaminationCommitteeSecretary()">Pobierz Sekretarza Komisji</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="GetExaminationCommitteeSecretaries()">Pobierz Wszystkich Sekretarzy Komisji</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="ConnectCommitteeSecretaryAndCommittee()">Wyznacz Sekretarza Komisji</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="GetCommitteeSecretaryWithExams()">Pobierz Komisje Sekretarza</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="DeleteExaminationCommitteeSecretary()">Usuń Sekretarza</button>
+  </div>
+</div>
+<div class="card-container">
+  <div class="card-example">
+    <button class="my-btn" (click)="CreateExaminationCommitteeMember()">Dodaj Członka Komisji</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="GetExaminationCommitteeMember()">Pobierz Członka Komisji</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="GetExaminationCommitteeMembers()">Pobierz Wszystkich Członków Komisji</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="ConnectCommitteeMemberAndCommittee()">Wyznacz Członka Komisji</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="GetCommitteeMemberWithExams()">Pobierz Komisje Członka Komisji</button>
+  </div>
+  <div class="card-example">
+    <button class="my-btn" (click)="DeleteExaminationCommitteeMember()">Usuń Członka Komisji</button>
+  </div>
+</div>
+<br>
+<div class='card-footer'>
+  <button class="back-btn" (click)='onBack()'>Back</button>
+</div>

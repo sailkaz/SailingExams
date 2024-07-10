@@ -1,0 +1,17 @@
+<main class="form-signin">
+  <h3 class="h3 mb-3 fw-normal">Podaj Swój Pesel</h3>
+  <div>
+    <input [(ngModel)]="pesel" class="form-control" placeholder="Pesel">
+  </div>
+  <h3 class="h3 mb-3 fw-normal">Podaj Numer Egzaminu</h3>
+  <div>
+    <input [(ngModel)]="sailingExamNumber" class="form-control" placeholder="PV-0-RR">
+  </div>
+  <button id="my-btn" (click)="addStudentToExam(pesel, sailingExamNumber)">Dopisz się do egzaminu</button>
+  <div class="info" *ngIf="responseInfo">
+    <p >{{responseInfo}}</p>
+  </div>
+</main>
+<div class="card-footer">
+  <button class="back-btn" (click)='onBack()'>Back</button>
+</div>

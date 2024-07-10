@@ -1,0 +1,21 @@
+div >input {
+	width: 300px;
+  height: 45px;
+	border-radius: 15px;
+	box-sizing: border-box;
+}
+
+.table-container {
+  position: absolute;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.exams-table {
+  position: relative;
+  z-index: 20;
+  width: 30%;
+  top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}

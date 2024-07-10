@@ -1,0 +1,12 @@
+<main>
+  <form [formGroup]="form" (submit)="submit()">
+    <div>
+      <input formControlName="email" type="email" autocomplete="email" class="form-control" placeholder="name@example.com">
+    </div>
+    <div>
+      <input class="form-control" formControlName="password" type="password" autocomplete="current-password" placeholder="Password">
+    </div>
+    <button class="my-btn" type="submit">Zaloguj</button>
+  </form>
+</main>
+

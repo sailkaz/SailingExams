@@ -1,0 +1,27 @@
+<main class="form-signin">
+  <h1 class="h3 mb-3 fw-normal">Pobierz wszystkich członków komisji</h1>
+  <button id="my-btn" (click)="getExaminationCommitteeMembers()">Wyślij</button>
+</main>
+<div class="card-footer">
+  <button class="back-btn" style="width:80px" (click)='onBack()'>Back</button>
+</div>
+<div class="table-container">
+  <div class="table-responsive" class="members-table">
+    <table class="table" *ngIf="examinationCommitteeMembers">
+      <thead>
+        <tr>
+          <th>lp</th>
+          <th>Imię</th>
+          <th>Nazwisko</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let examinationCommitteeMember of examinationCommitteeMembers">
+          <td scope="row"></td>
+          <td>{{ examinationCommitteeMember.examinationCommitteeMemberFirstName }}</td>
+          <td>{{ examinationCommitteeMember.examinationCommitteeMemberLastName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

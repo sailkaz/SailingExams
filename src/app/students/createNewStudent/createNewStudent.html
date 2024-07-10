@@ -1,0 +1,31 @@
+<main class="form-signin">
+  <h1 class="h3 mb-3 fw-normal">Podaj Swoje Dane</h1>
+  <div>
+    <input [(ngModel)]="student.firstName" class="form-control" placeholder="Imię">
+  </div>
+  <div>
+    <input [(ngModel)]="student.lastName" class="form-control" placeholder="Nazwisko">
+  </div>
+  <div>
+    <input [(ngModel)]="student.pesel" class="form-control" placeholder="Pesel">
+  </div>
+  <div>
+    <input [(ngModel)]="student.address.street" class="form-control" placeholder="Ulica">
+  </div>
+  <div>
+    <input [(ngModel)]="student.address.streetNumber" class="form-control" placeholder="Numer Ulicy">
+  </div>
+  <div>
+    <input [(ngModel)]="student.address.flatNumber" class="form-control" placeholder="Numer Mieszkania">
+  </div>
+  <div>
+    <input [(ngModel)]="student.address.postalCode" class="form-control" placeholder="Kod Pocztowy">
+  </div>
+  <div>
+    <input [(ngModel)]="student.address.city" class="form-control" placeholder="Miasto">
+  </div>
+  <button id="my-btn" (click)="createStudent(student)">Wyślij</button>
+</main>
+<div class="card-footer">
+  <button class="back-btn" (click)='onBack()'>Back</button>
+</div>

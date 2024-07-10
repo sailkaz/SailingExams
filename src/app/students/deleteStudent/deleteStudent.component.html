@@ -1,0 +1,13 @@
+<main class="form-signin">
+  <h3 class="h3 mb-3 fw-normal" justify-content: center>Podaj Pesel</h3>
+  <div>
+    <input [(ngModel)]="pesel" class="form-control" placeholder="pesel">
+  </div>
+  <button id="my-btn" (click)="deleteStudent(pesel)">Usuń</button>
+  <div class="info" *ngIf="responseInfo">
+    <p>{{responseInfo}}</p>
+</div>
+</main>
+<div class="card-footer">
+    <button class="back-btn" (click)='onBack()'>Back</button>
+  </div>

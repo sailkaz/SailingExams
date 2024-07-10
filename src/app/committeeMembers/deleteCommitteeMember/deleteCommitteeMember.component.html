@@ -1,0 +1,14 @@
+<main class="form-signin">
+  <h3 class="h3 mb-3 fw-normal" justify-content: center>Podaj Nazwisko Członka Komisji</h3>
+  <div>
+    <input [(ngModel)]="lastName" type="text" class="form-control" placeholder="Nazwisko">
+  </div>
+  <button id="my-btn" (click)="deleteCommitteeMember(lastName)">Usuń</button>
+  <div class="info" *ngIf="responseInfo">
+    <p>{{responseInfo}}</p>
+  </div>
+</main>
+<div class="card-footer">
+  <button class="back-btn" (click)='onBack()'>Back</button>
+
+</div>
